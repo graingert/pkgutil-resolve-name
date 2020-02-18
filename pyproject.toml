@@ -1,0 +1,12 @@
+[build-system]
+requires = ["flit_core >=2,<3"]
+build-backend = "flit_core.buildapi"
+
+[tool.flit.metadata]
+module = "pkgutil_resolve_name"
+author = "Vinay Sajip"
+author-email = "vinay_sajip@yahoo.co.uk"
+maintainer = "Thomas Grainger"
+maintainer-email = "pkgutil-resolve-name@graingert.co.uk"
+home-page = "https://github.com/graingert/pkgutil-resolve-name"
+classifiers = ["License :: OSI Approved :: MIT License"]
