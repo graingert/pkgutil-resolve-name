@@ -36,14 +36,14 @@ import re
 __version__ = "0.0.0.a0"
 
 _DOTTED_WORDS = r'[a-z_]\w*(\.[a-z_]\w*)*'
-_NAME_PATTERN = re.compile(f'^({_DOTTED_WORDS})(:({_DOTTED_WORDS})?)?$', re.I)
+_NAME_PATTERN = re.compile('^({_DOTTED_WORDS})(:({_DOTTED_WORDS})?)?$'.format(_DOTTED_WORDS=_DOTTED_WORDS), re.I)
 del _DOTTED_WORDS
 
 
 def resolve_name(name):
     m = _NAME_PATTERN.match(name)
     if not m:
-        raise ValueError(f'invalid format: {name!r}')
+        raise ValueError('invalid format: {name!r}'.format(name=name))
     groups = m.groups()
     if groups[2]:
         # there is a colon - a one-step import is all that's needed
@@ -57,7 +57,7 @@ def resolve_name(name):
         mod = importlib.import_module(modname)
         while parts:
             p = parts[0]
-            s = f'{modname}.{p}'
+            s = '{modname}.{p}'.format(modname=modname, p=p)
             try:
                 mod = importlib.import_module(s)
                 parts.pop(0)
