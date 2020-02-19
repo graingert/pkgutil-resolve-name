@@ -33,7 +33,7 @@ AttributeError - if a failure occurred when traversing the object hierarchy
 import importlib
 import re
 
-__version__ = "0.0.0"
+__version__ = "1.0.0"
 
 _DOTTED_WORDS = r'[a-z_]\w*(\.[a-z_]\w*)*'
 _NAME_PATTERN = re.compile('^({_DOTTED_WORDS})(:({_DOTTED_WORDS})?)?$'.format(_DOTTED_WORDS=_DOTTED_WORDS), re.I)
